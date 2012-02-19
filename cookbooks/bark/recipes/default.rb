@@ -17,7 +17,7 @@ script "install_bark" do
   user "root"
   cwd "/tmp"
   code <<-EOH
-    rsync -avz /vagrant /var/www/html/bark/
+    rsync -avz --delete /vagrant/www/ /var/www/html/bark/
     chown apache.apache -R /var/www/html/bark
     chmod 777 -R /var/www/html/bark
     /etc/init.d/httpd restart
